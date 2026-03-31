@@ -36,23 +36,23 @@ void loop() {
     // 'W' = Full Throttle, 'S' = Stop, 'A' = Turn Left, 'D' = Turn Right
     switch (command) {
       case 'W': 
-        updateDrive(1500, 1500, 90); // Throttle up, servo centered
+        updateDrive(2000, 2000, 90); // Throttle up, servo centered
         Serial.println("Moving Forward");
         break;
       case 'S':
-        updateDrive(-1500, -1500, 90); // Reverse
+        updateDrive(1000, 1000, 90); // Reverse
         Serial.println("Reverse");
         break;
       case 'A':
-        updateDrive(1200, 1200, 45); // Slow move, turn servo
+        updateDrive(1750, 1750, 45); // Slow move, turn servo
         Serial.println("Turning Left");
         break;
       case 'D':
-        updateDrive(1200, 1200, 135); // Slow move, turn servo
+        updateDrive(1750, 1750, 135); // Slow move, turn servo
         Serial.println("Turning Right");
         break;
       default:
-        updateDrive(0, 0, 90); // Brake
+        updateDrive(1500, 1500, 90); // Brake
         Serial.println("stopped");
     }
   }
