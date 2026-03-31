@@ -40,8 +40,8 @@ void loop() {
         Serial.println("Moving Forward");
         break;
       case 'S':
-        updateDrive(0, 0, 90); // Stop
-        Serial.println("Stopped");
+        updateDrive(-1500, -1500, 90); // Reverse
+        Serial.println("Reverse");
         break;
       case 'A':
         updateDrive(1200, 1200, 45); // Slow move, turn servo
@@ -51,6 +51,9 @@ void loop() {
         updateDrive(1200, 1200, 135); // Slow move, turn servo
         Serial.println("Turning Right");
         break;
+      default:
+        updateDrive(0, 0, 90); // Brake
+        Serial.println("stopped");
     }
   }
 }
